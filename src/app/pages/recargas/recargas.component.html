@@ -1,0 +1,39 @@
+<p>Recargas</p>
+<form>
+  <table>
+    <tr>
+      <td>Id</td>
+      <td><input type="number" name="txtId" [(ngModel)]="recarga.id"></td>
+    </tr>
+    <tr>
+      <td>Numero Telefono</td>
+      <td><input type="text" name="txtNumeroTelefono" [(ngModel)]="recarga.numeroTelefono"></td>
+    </tr>
+    <tr>
+      <td>Operador</td>
+      <td><input type="text" name="txtDni" [(ngModel)]="recarga.operador"></td>
+    </tr>
+    <tr>
+      <td>Monto</td>
+      <td><input type="text" name="txtNombre" [(ngModel)]="recarga.monto"></td>
+    </tr>
+  </table>
+  <button (click)='guardar()'>Guardar</button>
+</form>
+
+<hr/>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Numero Telefono</th>
+    <th>Operador</th>
+    <th>Monto</th>
+  </tr>
+  <tr *ngFor='let rec of recargas | async'>
+    <td>{{rec.id}}</td>
+    <td>{{rec.numeroTelefono}}</td>
+    <td>{{rec.operador}}</td>
+    <td>{{rec.monto}}</td>
+  </tr>
+</table>
